@@ -1,38 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CgProfile } from "react-icons/cg";
+import { LuGoal } from "react-icons/lu";
+import { MdDashboard, MdSettings } from "react-icons/md";
 
 import iconM from "./icon-m.png";
-
-interface IItem {
-  title: string;
-  route: string;
-}
-
-interface IItemsGroup {
-  menu: IItem[];
-  account: IItem[];
-  [key: string]: IItem[];
-}
+import { IItem, IItemsGroup } from "./types";
 
 const items: IItemsGroup = {
   menu: [
     {
       title: "Board",
       route: "/",
+      icon: <MdDashboard />,
     },
     {
       title: "Goals",
       route: "/goals",
+      icon: <LuGoal />,
     },
   ],
   account: [
     {
       title: "Profile",
       route: "/profile",
+      icon: <CgProfile />,
     },
     {
       title: "Settings",
       route: "/settings",
+      icon: <MdSettings />,
     },
   ],
 };
@@ -62,8 +59,11 @@ const Sidebar = () => {
             <div className="capitalize ">{key.toString()}</div>
             <ul className="pl-4 mt-2">
               {items[key].map((item: IItem) => (
-                <li key={item.title}>
-                  <Link href={item.route}>{item.title}</Link>
+                <li className="flex items-center" key={item.title}>
+                  {item.icon}
+                  <Link className="ml-2" href={item.route}>
+                    {item.title}
+                  </Link>
                 </li>
               ))}
             </ul>
