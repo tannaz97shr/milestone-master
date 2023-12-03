@@ -8,6 +8,7 @@ import { LuGoal } from "react-icons/lu";
 import { MdDashboard, MdSettings } from "react-icons/md";
 
 import { useState } from "react";
+import ThemeSwitch from "../ThemeSwitch";
 import Backdrop from "../UI/Backdrop";
 import iconM from "./icon-m.png";
 import { IItem, IItemsGroup } from "./types";
@@ -40,10 +41,10 @@ const items: IItemsGroup = {
 };
 
 const Sidebar = () => {
-  const [isMenueOpen, setIsMenueOpen] = useState(true);
+  const [isMenueOpen, setIsMenueOpen] = useState(false);
   return (
     <>
-      <Backdrop onClick={() => setIsMenueOpen(false)} />
+      {isMenueOpen && <Backdrop onClick={() => setIsMenueOpen(false)} />}
       <div
         className={`z-10 transition-all flex bg-zinc-800 shadow shadow-zinc-500 p-4
     ${
@@ -91,6 +92,7 @@ const Sidebar = () => {
             );
           })}
         </div>
+        <ThemeSwitch />
       </div>
     </>
   );
