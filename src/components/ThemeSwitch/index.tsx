@@ -8,9 +8,7 @@ function ThemeSwitch() {
   const { theme, setTheme, systemTheme } = useTheme();
   //   const currentTheme = theme === "system" ? systemTheme : theme;
   const [isDark, setIsDark] = useState<boolean>(theme === "dark");
-  console.log("current", theme);
   const handleSwitchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("event", e.target.checked);
     setIsDark(!isDark);
   };
   useEffect(() => {
