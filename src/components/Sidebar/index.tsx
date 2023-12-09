@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CgProfile } from "react-icons/cg";
 import { IoMdMenu } from "react-icons/io";
 import { LuGoal } from "react-icons/lu";
@@ -41,6 +42,7 @@ const items: IItemsGroup = {
 };
 
 const Sidebar = () => {
+  const pathname: string = usePathname();
   const [isMenueOpen, setIsMenueOpen] = useState(false);
   return (
     <>
@@ -80,7 +82,15 @@ const Sidebar = () => {
                 <div className="capitalize ">{key.toString()}</div>
                 <ul className="pl-4 mt-2">
                   {items[key].map((item: IItem) => (
-                    <li className="flex items-center" key={item.title}>
+                    <li
+                      className={`flex items-center my-2 ${
+                        item.route !== "/"
+                          ? pathname.includes(item.route) &&
+                            "font-semibold text-purple-400"
+                          : pathname === "/" && "font-semibold text-purple-400"
+                      }`}
+                      key={item.title}
+                    >
                       {item.icon}
                       <Link className="ml-2" href={item.route}>
                         {item.title}
