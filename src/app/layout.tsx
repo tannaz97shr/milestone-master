@@ -22,9 +22,9 @@ export default function RootLayout({
         <Providers>
           <main className="flex flex-col lg:flex-row min-h-screen bg-light-primary dark:bg-dark-primary">
             <Sidebar />
-            <div>
+            <div className="flex-1">
               <Header />
-              {children}
+              <div className="mx-4">{children}</div>
             </div>
           </main>
         </Providers>
