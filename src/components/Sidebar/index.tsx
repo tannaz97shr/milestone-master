@@ -48,7 +48,8 @@ const Sidebar = () => {
     <>
       {isMenueOpen && <Backdrop onClick={() => setIsMenueOpen(false)} />}
       <div
-        className={`z-10 transition-all flex bg-zinc-800 shadow shadow-zinc-500 p-4
+        className={`z-10 transition-all flex p-4 
+        bg-light-secondary dark:bg-dark-secondary shadow shadow-light-secondary dark:shadow-dark-secondary
     ${
       isMenueOpen
         ? "w-60 flex-col items-stretch justify-normal fixed lg:static h-[100vh]"
@@ -56,19 +57,21 @@ const Sidebar = () => {
     }
     `}
       >
-        <div className="flex font-semibold lg:mb-4 text-lg items-center text-purple-400">
+        <div className="flex font-semibold lg:mb-4 text-lg items-center text-alpha dark:text-beta">
           <Image
             src={iconM}
             width={30}
             height={30}
-            alt="Picture of the author"
+            alt="icon m"
             className="mr-2"
           />{" "}
           Milestone Master
         </div>
         <button
           onClick={() => setIsMenueOpen(!isMenueOpen)}
-          className={`${isMenueOpen ? "hidden" : "lg:hidden text-purple-400"}`}
+          className={`${
+            isMenueOpen ? "hidden" : "lg:hidden text-alpha dark:text-beta"
+          }`}
         >
           <IoMdMenu size="2rem" />
         </button>
@@ -77,7 +80,8 @@ const Sidebar = () => {
             return (
               <div
                 key={key}
-                className="border-slate-500 text-gray-300 border-b mb-4 py-2"
+                className="border-dark-secondary dark:border-light-secondary text-dark-primary dark:text-light-primary
+                 border-b mb-4 py-2"
               >
                 <div className="capitalize ">{key.toString()}</div>
                 <ul className="pl-4 mt-2">
@@ -86,8 +90,8 @@ const Sidebar = () => {
                       className={`flex items-center my-2 ${
                         item.route !== "/"
                           ? pathname.includes(item.route) &&
-                            "font-semibold text-purple-400"
-                          : pathname === "/" && "font-semibold text-purple-400"
+                            "font-semibold text-beta"
+                          : pathname === "/" && "font-semibold text-beta"
                       }`}
                       key={item.title}
                     >
