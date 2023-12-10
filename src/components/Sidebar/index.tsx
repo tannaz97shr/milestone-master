@@ -106,7 +106,9 @@ const Sidebar = () => {
             );
           })}
         </div>
-        <ThemeSwitch />
+        <div className={`mt-auto ${!isMenueOpen && "hidden lg:flex"}`}>
+          <ThemeSwitch />
+        </div>
       </div>
     </>
   );
