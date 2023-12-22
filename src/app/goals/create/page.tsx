@@ -1,22 +1,10 @@
-import { createGoal } from "@/app/actions";
-import { SubmitButton } from "@/components/SubmitButton";
+import GoalForm from "@/components/GoalForm";
 
 function Create() {
   return (
     <>
       <div>create</div>
-      <form action={createGoal}>
-        {/* <input type="hidden" name="userId" value={userId} /> */}
-        <label>
-          title:
-          <input type="text" name="title" />
-        </label>
-        <label>
-          description:
-          <textarea name="description" />
-        </label>
-        <SubmitButton />
-      </form>
+      <GoalForm initialState={{}} />
     </>
   );
 }
