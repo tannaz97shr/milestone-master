@@ -7,7 +7,7 @@ interface BreadcrumbProps {
 export default function Breadcrumb({ pathArray }: BreadcrumbProps) {
   return (
     <ul className="flex">
-      <li className="mr-2 hover:text-alpha">
+      <li className="mr-2 hover:text-purple">
         <Link href="/">Home</Link>
       </li>
       {pathArray.map((path: string, index: number) => {

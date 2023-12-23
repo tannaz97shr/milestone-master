@@ -16,15 +16,19 @@ interface GoalFormProps {
 const GoalForm = ({ initialState }: GoalFormProps) => {
   const [state, formAction] = useFormState(createGoal, initialState);
   return (
-    <form action={formAction}>
+    <form className="flex flex-col gap-2 w-[30rem] mx-12" action={formAction}>
       {/* <input type="hidden" name="userId" value={userId} /> */}
-      <label>
+      <label className="flex justify-between capitalize p-2 gap-2">
         title:
-        <input type="text" name="title" />
+        <input
+          type="text"
+          name="title"
+          className="w-60 p-2 rounded bg-transparent border border-"
+        />
       </label>
-      <label>
+      <label className="flex justify-between capitalize p-2 gap-2">
         description:
-        <textarea name="description" />
+        <textarea name="description" className="w-60" />
       </label>
       {state?.message}
       <SubmitButton />

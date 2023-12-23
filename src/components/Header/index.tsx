@@ -9,7 +9,7 @@ export default function Header() {
   const pathname = usePathname();
   const pathArray: string[] = pathname.split("/");
   return (
-    <div className="flex items-center bg-beta p-2 text-dark-primary dark:text-light-primary mb-2">
+    <div className="flex items-center bg-rose p-2 text-dark-blue dark:text-light-pink mb-2">
       <button className="mr-4" onClick={() => router.back()}>
         <IoMdArrowRoundBack size="1.25rem" />
       </button>

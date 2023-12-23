@@ -49,7 +49,7 @@ const Sidebar = () => {
       {isMenueOpen && <Backdrop onClick={() => setIsMenueOpen(false)} />}
       <div
         className={`z-10 transition-all flex p-4 
-        bg-light-secondary dark:bg-dark-secondary shadow shadow-light-secondary dark:shadow-dark-secondary
+        bg-orange dark:bg-dark-purple shadow shadow-orange dark:shadow-dark-purple
     ${
       isMenueOpen
         ? "w-60 flex-col items-stretch justify-normal fixed lg:static h-[100vh]"
@@ -57,7 +57,7 @@ const Sidebar = () => {
     }
     `}
       >
-        <div className="flex font-semibold lg:mb-4 text-lg items-center text-alpha dark:text-beta">
+        <div className="flex font-semibold lg:mb-4 text-lg items-center text-purple dark:text-rose">
           <Image
             src={iconM}
             width={30}
@@ -70,7 +70,7 @@ const Sidebar = () => {
         <button
           onClick={() => setIsMenueOpen(!isMenueOpen)}
           className={`${
-            isMenueOpen ? "hidden" : "lg:hidden text-alpha dark:text-beta"
+            isMenueOpen ? "hidden" : "lg:hidden text-purple dark:text-rose"
           }`}
         >
           <IoMdMenu size="2rem" />
@@ -80,7 +80,7 @@ const Sidebar = () => {
             return (
               <div
                 key={key}
-                className="border-dark-secondary dark:border-light-secondary text-dark-primary dark:text-light-primary
+                className="border-dark-purple dark:border-orange text-dark-blue dark:text-light-pink
                  border-b mb-4 py-2"
               >
                 <div className="capitalize ">{key.toString()}</div>
@@ -90,8 +90,8 @@ const Sidebar = () => {
                       className={`flex items-center my-2 ${
                         item.route !== "/"
                           ? pathname.includes(item.route) &&
-                            "font-semibold text-beta"
-                          : pathname === "/" && "font-semibold text-beta"
+                            "font-semibold text-rose"
+                          : pathname === "/" && "font-semibold text-rose"
                       }`}
                       key={item.title}
                     >

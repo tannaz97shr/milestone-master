@@ -8,12 +8,12 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      "dark-primary": "#1d1a39",
-      "dark-secondary": "#451952",
-      alpha: "#662649",
-      beta: "#ae445a",
-      "light-primary": "#e8bcb9",
-      "light-secondary": "#f39f5a",
+      "dark-blue": "#1d1a39",
+      "dark-purple": "#451952",
+      purple: "#662649",
+      rose: "#ae445a",
+      "light-pink": "#e8bcb9",
+      orange: "#f39f5a",
     },
     extend: {
       backgroundImage: {
